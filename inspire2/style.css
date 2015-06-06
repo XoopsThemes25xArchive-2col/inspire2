@@ -1,0 +1,351 @@
+/* 
+
+Inspire 2.0
+File:					style.css
+Author: 				insraq
+URI: 					http://insrq.com/
+License:				CREATIVE COMMONS Attribution-ShareAlike 3.0
+
+
+ */
+
+/* Global Style */
+
+body {
+	color: #666666;
+	font-size: 14px;
+	font-family: Geneva, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+	line-height: 1.7;
+	min-width: 960px;
+	width: 100%;
+}
+
+a {
+	color: #025681;
+	text-decoration: none;
+}
+
+a img {
+	outline: none;
+	border: 0;
+}
+
+a:hover {
+	color: #0076b3;
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	color: black;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 10px 0 0 0;
+	padding: 0;
+}
+
+h3 {
+	font-size: 16px;
+}
+
+small {
+	font-size: 12px;
+}
+
+/* Header Part */
+
+#header {
+	height: 179px;
+	background: url(img/header_bg.png);
+}
+
+#logo {
+	background: url(img/logo.png) no-repeat;
+	height: 179px;
+}
+
+#userarea {
+	color: white;
+	text-align: right;
+	height: 69px;
+	position: relative;
+}
+
+#userarea a  {
+	color: white;
+	text-decoration: none;
+	margin: 0 10px 0 10px;
+}
+
+/* For Tooltip, i.e. Usermenu */
+.tooltip {
+	display: none;
+	height: 30px;
+	border: 1px dashed white;
+	width: 480px;
+	text-align: center;
+}
+
+/* Fancy search form */
+#searchform {
+	margin: 0 0 0 100px;
+	padding: 0;
+	height: 60px;
+}
+
+#searchbox {
+	margin: 0;
+	padding: 0;
+	width: 350px;
+	height: 36px;
+	background: url(img/searchform-input.png) no-repeat;
+}
+
+#searchform-input {
+	background: none;
+	font-size: 18px;
+	font-family: "Microsoft Yahei", Arial, Verdana, sans-serif;
+	margin: 6px 0 6px 6px;
+	padding: 0;
+	width: 300px;
+	height: 24px;
+	border: 0;
+}
+
+#searchform-button {
+	background: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 40px;
+	height: 36px;
+	text-indent: -999999px;
+	cursor: pointer;
+}
+
+/* Navigation */
+
+#navbar {
+	padding: 0;
+	margin: 0;
+	height: 50px;
+}
+
+#navbar ul {
+	padding: 10px 0 0 0;
+	margin: 0 0 0 0;
+}
+
+#navbar li {
+	display: block;
+	float: left;
+	margin: 0 6px 0 6px;
+}
+
+#navbar li a {
+	height: 33px;
+	width: 60px;
+	padding-top: 7px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+
+#navbar li a:hover, #navbar li.active a {
+	position: relative;
+	background: white;
+	color: #025681;
+}
+
+/* Showcase and mini */
+
+#showcase {
+	min-height: 368px;
+	background: url(img/showcase_bg.png) repeat-x bottom center;
+	padding-bottom: 20px;
+}
+
+#showcase_mini {
+	background: url(img/showcase_bg_mini.png) repeat-x bottom center;
+	padding-bottom: 20px;
+}
+
+#showcase_mini h2 {
+	color: #0076b3;
+}
+
+/* Content */
+#i2-content {
+	margin-top: 10px;
+}
+
+/* The blue horizontal line and footer */
+
+#footer-bar {
+	background: #017db0;
+	height: 2px;
+	margin: 20px 0 10px 0;
+}
+
+#footer, #footer a {
+	color: #666666;
+	font-size: 12px;
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+/* Login Overlay */
+
+.loginoverlay {
+	color: #666666;
+	display:none; 
+	z-index:10000; 
+	min-width:620px;     
+	min-height:20px; 
+	text-align: left;
+	background: white;
+	padding: 40px 60px 20px 60px;
+}
+
+.loginoverlay a {
+	color: #0076b3;
+}
+
+.loginoverlay form {
+	padding: 0;
+	margin: 0;
+}
+
+.loginoverlay .close { 
+	background-image:url(img/close.png); 
+	position:absolute; 
+	right:-15px; 
+	top:-15px; 
+	cursor:pointer; 
+	height:35px; 
+	width:35px; 
+}
+
+/* XOOPS Message */
+
+#xoops_message {
+	margin-top: 100px;
+	text-align: center;
+}
+
+#xoops_message h2 {
+	margin-bottom: 20px;
+}
+
+/* Required by XOOPS, copy from inspire 1 */
+
+td#mainmenu a {padding:0; margin:0;}
+
+td#mainmenu a.menuTop {margin-top:0px; padding: 0;}
+
+td#mainmenu a.menuMain {display:block;}
+
+td#mainmenu a.menuSub {display:block;}
+
+td#usermenu a.menuTop {margin-top:0px; padding: 0;}
+
+td#usermenu a {display:block;}
+
+/* Main Classes for table's sections visualization/discrimination */
+.outer { border:1px solid #C9D8ED;}
+
+.head {border-bottom: 1px solid #CECECE; padding: 3px 4px 3px 7px; background-color: #e7f2f7; border-right: 1px solid #CFCFCF; color:#444444; }
+
+.even {background-color:#F3F7FA; padding: 3px 4px 3px 7px; line-height: 16px; border-bottom: 1px solid #D6D6D6; border-top: 0px solid #ffffff; border-right: 1px solid #DCDCDC;}
+
+.odd {background-color:#F9F9F9; padding: 3px 4px 3px 7px; line-height: 16px; border-bottom: 1px solid #D6D6D6; border-right: 1px solid #DCDCDC; border-top: 0px solid #ffffff;}
+
+.foot {padding: 3px 3px; border-top: 1px solid #EEEEEE; border-bottom: 1px solid #DCDCDC; background-color: #FCFCFC; }
+
+tr.even td {padding: 3px 3px; border-bottom: 1px solid #DCDCDC; border-right: 1px solid #DCDCDC;}
+
+tr.odd td {padding: 3px 3px; border-bottom: 1px solid #DCDCDC; border-right: 1px solid #DCDCDC;}
+
+tr.head td { border-bottom: 1px solid #C0C0C0; padding: 4px 5px; font-weight: bold; border-right: 1px solid #C0C0C0; border-left: 0px solid #F5F5F5;}
+
+th { border-bottom: 1px solid #C0C0C0; border-right: 1px solid #C0C0C0; border-left: 1px solid #F5F5F5; background-color: #addbf8; padding: 4px 6px; color:#3C3C3C;}
+
+div#content { text-align: left; width: 100%; }
+
+div.errorMsg { background-color: #FFCCCC; text-align: center; border-top: 1px solid #DDDDFF; border-left: 1px solid #DDDDFF; border-right: 1px solid #AAAAAA; border-bottom: 1px solid #AAAAAA; font-weight: bold; padding: 10px;}
+div.confirmMsg { background-color: #DDFFDF; color: #136C99; text-align: center; border-top: 1px solid #DDDDFF; border-left: 1px solid #DDDDFF; border-right: 1px solid #AAAAAA; border-bottom: 1px solid #AAAAAA; font-weight: bold; padding: 10px;}
+div.resultMsg { background-color : #CCCCCC; color: #333333; text-align: center; border-top: 1px solid silver; border-left: 1px solid silver; font-weight: bold; border-right: 1px solid #666666; border-bottom: 1px solid #666666; padding: 10px;}
+
+div.xoopsCode { 
+	background-color: #FFFFEC; 
+	border: 1px dotted #0066CC; 
+	font-family: Consolas, "Lucida Console", "Courier New", Monaco, monospace, monospace; 
+	padding: 7px 8px 8px 15px; 
+	overflow: auto; 
+	margin: 6px 0 4px 0;
+	max-width:600px;
+	max-height:600px;
+	font-size: 13px;
+}
+
+div.xoopsQuote {
+	background-color: #F4FAFF; 
+	border: 1px dashed #000080; 
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
+	padding: 7px 8px 8px 15px; 
+	overflow: auto; 
+	margin: 6px 0 4px 0;
+	font-size:0.9em;
+	max-height:600px;
+	max-width:600px;
+	width:600px;
+	font-size: 13px;
+}
+
+* html div.xoopsCode, * html div.xoopsQuote {width:600px;}
+
+/* For CBB */
+
+.comText{
+	padding: 10px;
+	line-height: 1.7;
+}
+
+/* Styles for pagenav */
+#xo-pagenav {
+    margin:                 7px 0;
+    text-align:             center;
+
+}
+#xo-pagenav a {
+    text-decoration:        none;
+}
+#xo-pagenav a:hover {
+    color:                  #fff;
+    background-color:       #2A75C5;
+    border:                 1px solid #2A75C5;
+}
+.xo-pagact {
+    margin:                 0;
+    padding:                .2em .5em;
+    color:                  #fff;
+    background-color:       #2A75C5;
+    border:                 1px solid #2A75C5;
+}
+.xo-counterpage, .xo-pagarrow {
+    margin:                 0;
+    padding:                .2em .5em;
+    color:                  #2A75C5;
+    background-color:       #fff;
+    border:                 1px solid #2A75C5;
+}
+.xo-counterpage:hover, .xo-pagarrow:hover {
+    color:#fff;
+}
+.xo-pagarrow {
+    letter-spacing:         0.2em;
+}

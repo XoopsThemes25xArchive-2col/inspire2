@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+
+<!-- Meta Tags -->
+<meta name="Description" content="<{$xoops_meta_description}>" />
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="keywords" content="<{$xoops_pagetitle}>,<{$xoops_meta_keywords}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="<{$smarty.const.META_GENER}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="revisit-after" content="<{$smarty.const.META_REV_AFT}>" />
+
+<!-- Styles/Relations -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="<{$xoops_url}>/backend.php" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" href="<{$xoops_imageurl}>otherCss/print.css" type="text/css" media="print" />
+<link rel="alternate stylesheet" type="text/css" href="<{$xoops_imageurl}>otherCss/highcontrast.css" title="zoom" rev="zoom" media="screen"/>
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/themes/inspire2/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/themes/inspire2/text.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/themes/inspire2/960.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_themecss}>" title="default" />
+
+<!-- JS -->
+<script src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js" type="text/javascript"></script>
+<script type="text/javascript"><{$xoops_js}></script>
+
+<!-- Important! - Add specific code from modules -->
+<{$xoops_module_header}>
+
+<title><{$xoops_sitename}><{if $xoops_pagetitle !=''}> - <{$xoops_pagetitle}><{/if}></title>
+
+</head>
+
+<body>
+
+<!-- Start Header -->
+<div id="header">
+	<div class="container_12">
+		<div id="logo" class="grid_6"></div>
+		<div class="grid_6">
+			<div id="userarea">
+				<{if !$xoops_isuser}>
+					<a href="<{xoAppUrl /register.php}>">Register</a><a rel="#loginbox" href="#">Login</a>
+				<{else}>
+					<a id="usermenu" href="#"><{$xoops_uname}><img src="<{$xoops_url}>/themes/inspire2/img/arrow.png" /></a>
+					<div class="tooltip">
+						<a href="<{xoAppUrl viewpmsg.php}>" title="Inbox"><{if $pmcount}>Inbox(New!)<{else}>Inbox<{/if}></a>
+						<a href="<{xoAppUrl /notifications.php}>" title="Notifications">Notifications</a> 
+						<a href="<{xoAppUrl /user.php}>" title="Profile">Profile</a>
+						<a href="<{xoAppUrl /edituser.php}>" title="Edit Profile">Edit Profile</a>
+						<{if $xoops_isadmin}><a href="<{xoAppUrl /admin.php}>" title="Admin">Admin</a><{/if}>
+						<a href="<{xoAppUrl /user.php op=logout}>" title="Log out" >Logout</a>
+					</div>
+					<script>
+						$("#usermenu").tooltip({
+													offset: [54, -205],
+													relative: true,
+													effect: "fade",
+													delay: 500
+												});  
+					</script>
+				<{/if}>
+			</div>
+			<div id="searchform">
+				<form id="searchbox" action="<{$xoops_url}>/search.php" method="get">
+					<input type="text" id="searchform-input" name="query" />
+					<input id="searchform-button" type="submit" value="Search" />
+					<input type="hidden" name="action" value="results" />
+				</form>
+			</div>
+			<div id="navbar">
+			<ul>
+				<li <{if $xoops_showcblock == 1}>class="active"<{/if}>><a href="<{$xoops_url}>">Home</a></li>
+				<li <{if $xoops_dirname eq "wfchannel"}>class="active"<{/if}>><a href="<{$xoops_url}>/modules/wfchannel">About</a></li>
+				<li <{if $xoops_dirname eq "news"}>class="active"<{/if}>><a href="<{$xoops_url}>/modules/news">News</a></li>
+				<li <{if $xoops_dirname eq "mediawiki"}>class="active"<{/if}>><a href="<{$xoops_url}>/modules/mediawiki">Wiki</a></li>
+				<li <{if $xoops_dirname eq "newbb"}>class="active"<{/if}>><a href="<{$xoops_url}>/modules/newbb">Forum</a></li>
+				<li <{if $xoops_dirname eq "contact"}>class="active"<{/if}>><a href="<{$xoops_url}>/modules/contact">Contact</a></li>
+			</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Start Login Overlay -->
+<div class="loginoverlay" id="loginbox"> 
+	<form method="post" action="<{xoAppUrl /user.php op=login}>">
+		<fieldset>
+		Username
+		<input name="uname" type="text" size="15" />
+		Password
+		<input name="pass" type="password" size="15" />
+		<input type="hidden" name="xoops_redirect" value="<{$smarty.server.REQUEST_URI}>" />
+		<input type="checkbox" name="rememberme" value="On" /> Remember
+		<input type="hidden" name="xoops_login" value="1" />
+		<input type="submit" value="Submit" />
+		<a href="<{xoAppUrl /register.php}>" title="Register">Register</a>
+		</fieldset>
+	</form>
+</div> 
+
+<script>$("a[rel]").overlay({expose: '#025681'});</script>
+
+<!-- Start Showcase -->
+<{if $xoops_showcblock}>
+	<div id="showcase">
+		<div class="container_12">
+			<{foreach item=block from=$xoops_ccblocks}>
+				<div id="grid_12">
+				<{if $block.title == ''}> <{* Useful for diplaying well blocks with no title *}>
+					<{$block.content}>
+				<{else}>
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				<{/if}>
+				<!-- Side block end -->
+				</div>
+				<div class="clear"></div>
+			<{/foreach}> 
+		</div>
+	</div>
+<{else}>
+	<div id="showcase_mini">
+		<div class="container_12">
+			<h2><{$xoops_pagetitle}></h2>
+		</div>
+	</div>
+<{/if}>
+
+<!-- Start Content -->
+<div id="i2-content" class="container_12">
+<{if $xoops_showrblock}>
+	<div class="grid_9">
+		<{foreach item=block from=$xoops_lblocks}>
+			<{if $block.title == ''}> <{* Useful for diplaying well blocks with no title *}>
+				<{$block.content}>
+			<{else}>
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+			<{/if}>
+		<{/foreach}>
+		<{$xoops_contents}>
+	</div>
+	<div class="grid_3">
+		<{foreach item=block from=$xoops_rblocks}>
+			<{if $block.title == ''}> <{* Useful for diplaying well blocks with no title *}>
+				<{$block.content}>
+			<{else}>
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+			<{/if}>
+		<{/foreach}> 
+	</div>
+	<div class="clear"></div>
+<{else}>
+	<div class="grid_12">
+		<{foreach item=block from=$xoops_lblocks}>
+			<{if $block.title == ''}> <{* Useful for diplaying well blocks with no title *}>
+				<{$block.content}>
+			<{else}>
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+			<{/if}>
+		<{/foreach}>
+		<{$xoops_contents}>
+	</div>
+	<div class="clear"></div>
+<{/if}>
+</div>
+
+
+<!-- Start Footer -->
+<div class="container_12">
+	<div id="footer-bar"></div>
+	<div id="footer"><{$xoops_sitename}> | Powered by <a href="http://xoops.org/"><b>XOOPS</b></a> | Inspire 2.0 - A Design of <a href="http://insraq.com/"><b>INSRAQ</b></a> | <a href="#">Top</a></div>
+</div>
+
+</body>
+</html>
